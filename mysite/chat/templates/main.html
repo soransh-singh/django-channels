@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Django Channels WebRTC</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Fredoka&family=Merriweather:wght@700;900&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+	<main>
+
+	<div id="roomjoin" class="roomjoin">
+		<p>Enter a Username to join chat.</p>
+		<input id="username">
+		<button id="btn-join" class="btn--primary">Join Room</button>
+	</div>
+
+
+
+
+	<div class="window">
+		<div class="main-grid-container">
+			<!-- for grid layout
+			assign class video-grad-layout -->
+			<section id="video-container" class="video__container video-grid-container">
+				<div class="video__local">
+					<video id="local-video" autoplay playsinline></video>
+					<div class="video__local__info">
+						<h3 id="label-username" class=""></h3>
+						<button id="btn-toggle-audio" class="btn--primary">Audio Mute</button>
+						<button id="btn-toggle-video" class="btn--primary">Video Off</button>
+					</div>
+				</div>
+			</section>
+
+			<section id="share" class="share">
+				<button id="btn-share-screen"  class="btn--primary">Share Screen</button>
+				<button id="btn-record-screen"  class="btn--primary">Record Screen</button>
+			</section>
+		</div>
+
+		<section id="chat" class="chat">
+			<h2  class="chat__heading"> chat </h2>
+			<div id="messages" class="chat__messages">
+				<ul id="message-list"></ul>
+			</div>
+			<div id="ct"  class="chat__input">
+				<input id="msg">
+				<button id="btn-send-msg" class="btn--primary">send</button>
+			</div>
+		</section>
+	</div>
+    {% block content %}
+    {% endblock %}
+	</main>
+</body>
+</html>

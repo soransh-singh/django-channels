@@ -1,0 +1,204 @@
+:root{
+  --clr-pr: 140 50% 42%;
+  --clr-bg-pr: 245 18% 18%;
+  --clr-white: 0 0% 100%;
+  --clr-black: 0 0% 12%;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  cursor: inherit;
+}
+
+html{
+  scroll-behavior: smooth;
+  cursor: default;
+}
+
+body{
+  min-height: 100vh;
+  font-family: 'Fredoka', sans-serif;
+  background-color: hsl(var(--clr-bg-pr));
+  line-height: 1.6;
+}
+
+img, video{
+  display: block;
+  max-width: 100%;
+}
+
+video {
+    background-color: hsl(0 10% 20%);
+}
+
+h1,h2,h3,h4,h5{
+  font-family: 'Roboto Mono', monospace;
+}
+
+ul{
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input, textarea, button{
+  font: inherit;
+  cursor: pointer;
+}
+
+input, button{
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 2px hsl(var(--clr-pr));
+  transition: 0.3s linear all;
+}
+
+input:hover, button:hover{
+  border: solid 2px hsl(0 0% 24%);
+}
+
+.window{
+  display: flex;
+}
+
+.main-grid-container {
+    display: grid;
+    width: 80%;
+    /* grid-template-areas:
+    "video video video video chat"
+    "video video video video chat"
+    "share share share share chat"; */
+    min-height: 100vh;
+}
+
+/* ------------------ */
+/* -----Video Div---- */
+/* ------------------ */
+
+.video-grid-container {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    align-items: start;
+}
+
+.video__local{
+  position: relative;
+}
+
+.video__local__info{
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+/* ------------------ */
+/* ---chat section--- */
+/* ------------------ */
+.chat{
+  /* grid-area: chat; */
+  width: 20%;
+  height: 100vh;
+  position: relative;
+  min-width: 250px;
+  background-color: hsl(var(--clr-bg-pr));
+  color: hsl(var(--clr-white));
+  display: flex;
+  flex-direction: column;
+  border-left: solid 4px hsl(var(--clr-pr));
+}
+
+.chat__heading{
+  text-transform: capitalize;
+  background-color: hsl(var(--clr-pr));
+  text-align: center;
+  letter-spacing: 2px;
+  border-bottom: 4px solid hsl(var(--clr-white));
+}
+
+.chat__input{
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-inline: 0.5rem;
+}
+
+/* ----------------- */
+/* --Share section-- */
+/* ----------------- */
+
+.share{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border-top: solid 4px hsl(var(--clr-pr));
+}
+
+/* -------------------- */
+/* --roomjoin section-- */
+/* -------------------- */
+
+.roomjoin{
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  transform: translate(10%, 5%);
+  border-radius: 0.25rem;
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+  border: solid 8px hsl(var(--clr-pr));
+  border-left: solid 16px hsl(var(--clr-pr));
+  z-index: 2;
+  background-color: hsl(var(--clr-bg-pr));
+  box-shadow: 0 0 0 200px hsl(var(--clr-black)/0.75),5px 10px 20px 0 hsl(var(--clr-white));
+}
+
+
+.roomjoin>p{
+  color: hsl(var(--clr-pr));
+  font-weight: bold;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.roomjoin--hidden{
+  display: none;
+}
+
+/* -------------------- */
+/* --utility classes -- */
+/* -------------------- */
+
+/* ------ button ------ */
+
+.btn--primary{
+  background-color: hsl(var(--clr-pr));
+  color: hsl(var(--clr-white));
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.btn--primary:hover{
+  transform: scaleY(1.1) scaleX(1.025);
+  text-decoration: underline;
+}
+
+.btn--primary:active{
+  transform: scaleY(1) scaleX(0.85);
+  text-decoration: underline;
+}
