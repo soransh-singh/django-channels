@@ -90,15 +90,42 @@ input:hover, button:hover{
     align-items: start;
 }
 
-.video__local{
+.video__local, .video__share{
   position: relative;
+  border-bottom: solid 2px hsl(var(--clr-pr));
 }
 
-.video__local__info{
+.video__local__info, .video__share__info{
   position: absolute;
   bottom: 0;
 }
 
+.video__local__info{
+  display: flex;
+  gap: 1rem;
+}
+
+.video__local__info> h3{
+  text-transform: capitalize;
+  padding-inline: 1rem;
+  color: hsl(var(--clr-black));
+  background-color: hsl(var(--clr-pr)/0.75);
+}
+
+.video__share__info{
+  text-transform: capitalize;
+  padding-inline: 1rem;
+  color: hsl(var(--clr-black));
+  border: solid 2px hsl(var(--clr-pr));
+  visibility: hidden;
+  background-color: hsl(var(--clr-pr)/0.1);
+  transition: 0.3s linear all;
+}
+
+.video__share:hover>.video__share__info{
+  visibility: visible;
+  background-color: hsl(var(--clr-pr)/0.75);
+}
 
 
 /* ------------------ */

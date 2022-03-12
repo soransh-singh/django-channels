@@ -732,15 +732,20 @@ function createVideo(peerUsername){
     remoteVideo.playsinline = true;
     // btnPlayRemoteVideo.id = peerUsername + '-btn-play-remote-video';
     // btnPlayRemoteVideo.innerHTML = 'Click here if remote video does not play';
+    var videoInfo = document.createElement('h2');
+    videoInfo.innerHTML = peerUsername
+    videoInfo.classList.add("video__share__info")
 
     // wrapper for the video and button elements
     var videoWrapper = document.createElement('div');
+    videoWrapper.classList.add('video__share');
 
     // add the wrapper to the video container
     videoContainer.appendChild(videoWrapper);
 
     // add the video to the wrapper
     videoWrapper.appendChild(remoteVideo);
+    videoWrapper.appendChild(videoInfo);
     // videoWrapper.appendChild(btnPlayRemoteVideo);
 
     // as user gesture
